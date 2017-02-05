@@ -1,0 +1,3 @@
+[submodule "CarND-LaneLines-P1"]
+	path = p1/CarND-LaneLines-P1
+	url = https://github.com/udacity/CarND-LaneLines-P1
