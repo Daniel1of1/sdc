@@ -14,6 +14,7 @@
 		65C0E5811E47C3F500BC4784 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C0E57F1E47C3F500BC4784 /* LaunchScreen.storyboard */; };
 		65C0E58C1E47C3F500BC4784 /* CVPlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0E58B1E47C3F500BC4784 /* CVPlaygroundTests.swift */; };
 		65C0E5971E47C3F500BC4784 /* CVPlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0E5961E47C3F500BC4784 /* CVPlaygroundUITests.swift */; };
+		F412464D38270294F368E0E7 /* Pods_CVPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF585073A43CE40EA6F66A8 /* Pods_CVPlayground.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01E63393F0AFBB26AB2352E3 /* Pods-CVPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVPlayground.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CVPlayground/Pods-CVPlayground.debug.xcconfig"; sourceTree = "<group>"; };
+		3A9CB977C4D6EEEF6A1095D7 /* Pods_CVPlaygroundUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CVPlaygroundUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C0E5731E47C3F500BC4784 /* CVPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C0E5761E47C3F500BC4784 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65C0E5781E47C3F500BC4784 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,9 @@
 		65C0E5921E47C3F500BC4784 /* CVPlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CVPlaygroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C0E5961E47C3F500BC4784 /* CVPlaygroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPlaygroundUITests.swift; sourceTree = "<group>"; };
 		65C0E5981E47C3F500BC4784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		947590D2F2C6294C99983D7C /* Pods_CVPlaygroundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CVPlaygroundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BF585073A43CE40EA6F66A8 /* Pods_CVPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CVPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8786B04C29A25DFC0B65A54 /* Pods-CVPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVPlayground.release.xcconfig"; path = "Pods/Target Support Files/Pods-CVPlayground/Pods-CVPlayground.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F412464D38270294F368E0E7 /* Pods_CVPlayground.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B10E0A4D2C97407BEDCCF5F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01E63393F0AFBB26AB2352E3 /* Pods-CVPlayground.debug.xcconfig */,
+				C8786B04C29A25DFC0B65A54 /* Pods-CVPlayground.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		65C0E56A1E47C3F500BC4784 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +97,8 @@
 				65C0E58A1E47C3F500BC4784 /* CVPlaygroundTests */,
 				65C0E5951E47C3F500BC4784 /* CVPlaygroundUITests */,
 				65C0E5741E47C3F500BC4784 /* Products */,
+				5B10E0A4D2C97407BEDCCF5F /* Pods */,
+				9D52DA78069798DF7016A900 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +143,16 @@
 			path = CVPlaygroundUITests;
 			sourceTree = "<group>";
 		};
+		9D52DA78069798DF7016A900 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BF585073A43CE40EA6F66A8 /* Pods_CVPlayground.framework */,
+				947590D2F2C6294C99983D7C /* Pods_CVPlaygroundTests.framework */,
+				3A9CB977C4D6EEEF6A1095D7 /* Pods_CVPlaygroundUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65C0E59B1E47C3F500BC4784 /* Build configuration list for PBXNativeTarget "CVPlayground" */;
 			buildPhases = (
+				F04CE41054F82D6BB89CB639 /* [CP] Check Pods Manifest.lock */,
 				65C0E56F1E47C3F500BC4784 /* Sources */,
 				65C0E5701E47C3F500BC4784 /* Frameworks */,
 				65C0E5711E47C3F500BC4784 /* Resources */,
+				9DB9CD74D1F11239471A7C45 /* [CP] Embed Pods Frameworks */,
+				AC569ACEF9357230E07DD825 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +287,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9DB9CD74D1F11239471A7C45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CVPlayground/Pods-CVPlayground-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC569ACEF9357230E07DD825 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CVPlayground/Pods-CVPlayground-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F04CE41054F82D6BB89CB639 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		65C0E56F1E47C3F500BC4784 /* Sources */ = {
@@ -413,6 +492,7 @@
 		};
 		65C0E59C1E47C3F500BC4784 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01E63393F0AFBB26AB2352E3 /* Pods-CVPlayground.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CGR3NY73FY;
@@ -426,6 +506,7 @@
 		};
 		65C0E59D1E47C3F500BC4784 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8786B04C29A25DFC0B65A54 /* Pods-CVPlayground.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CGR3NY73FY;

@@ -1,0 +1,19 @@
+PODS:
+  - OpenCV-iOS (3.1.1)
+  - OpenCVWrapper (0.0.1):
+    - OpenCV-iOS
+
+DEPENDENCIES:
+  - OpenCVWrapper (from `OpenCVWrapper`)
+
+EXTERNAL SOURCES:
+  OpenCVWrapper:
+    :path: OpenCVWrapper
+
+SPEC CHECKSUMS:
+  OpenCV-iOS: 257d4b484571baf3f4a160693fbc00603dd3ccf4
+  OpenCVWrapper: 94a5b554685b1fc4d5cdea18c68b3d32d270cd69
+
+PODFILE CHECKSUM: 4d0f489e23d078651fdd13db5c4d6f771cbc7790
+
+COCOAPODS: 1.1.1

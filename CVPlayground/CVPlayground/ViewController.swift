@@ -8,13 +8,16 @@
 
 import UIKit
 import AVFoundation
+import OpenCVWrapper
+
+let outputQueue = DispatchQueue(label: "com.cvplayground.imageprocessing", qos: DispatchQoS.userInitiated, attributes: [], autoreleaseFrequency: DispatchQueue.AutoreleaseFrequency.inherit, target: nil)
+
 
 class ViewController: UIViewController {
     
-    let outputQueue = DispatchQueue(label: "com.cvplayground.imageprocessing")
     let imageView = UIImageView()
     let session = AVCaptureSession()
-
+    let cv2 = OpenCVWrap()
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.frame = self.view.bounds
@@ -31,7 +34,8 @@ class ViewController: UIViewController {
         
         let connection = output.connection(withMediaType: AVMediaTypeVideo)
         connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-        
+
+
         session.startRunning()
 
     }
@@ -45,27 +49,33 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+
+    func convertCIImageToCGImage(inputImage: CIImage) -> CGImage! {
+            let context = CIContext(options: nil)
+            if context != nil {
+                    return context.createCGImage(inputImage, from: inputImage.extent)
+                }
+            return nil
+    }
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
-        
-        var imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
-        
-        CVPixelBufferLockBaseAddress(imageBuffer, CVPixelBufferLockFlags.readOnly)
-        
-//        unsigned char *pixel = (unsigned char *)CVPixelBufferGetBaseAddress(pixelBuffer);
-//        cv::Mat image = cv::Mat(bufferHeight,bufferWidth,CV_8UC4,pixel); //put buffer in open cv, no memory copied
-//        //Processing here
-//        [self processImage:image];
-//        
-//        //End processing
-        CVPixelBufferUnlockBaseAddress(imageBuffer, CVPixelBufferLockFlags.readOnly)
-        
-        let image = UIImage(ciImage: CIImage(cvImageBuffer: imageBuffer))
-        
-        DispatchQueue.main.async {
-            self.imageView.image = image
-        }
 
+        outputQueue.async {
+            var imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
+
+            CVPixelBufferLockBaseAddress(imageBuffer, CVPixelBufferLockFlags.readOnly)
+            let cg = self.convertCIImageToCGImage(inputImage:CIImage(cvImageBuffer: imageBuffer))
+            let image = UIImage(cgImage:cg!)
+            let processed = [image].map(self.cv2.gray).map(self.cv2.gauss).map(self.cv2.canny).map(self.cv2.hough).first!
+            CVPixelBufferUnlockBaseAddress(imageBuffer, CVPixelBufferLockFlags.readOnly)
+
+
+            DispatchQueue.main.async {
+                self.imageView.image = processed
+            }
+
+        }
     }
+
     
 }
