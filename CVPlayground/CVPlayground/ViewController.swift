@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import OpenCVWrapper
 
 class ViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let a = OpenCVWrap().yolo()
         imageView.frame = self.view.bounds
         imageView.contentMode = .center
         self.view.addSubview(imageView)
